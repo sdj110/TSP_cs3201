@@ -2,15 +2,16 @@
 from city import City
 import file_manager
 
-class CityManager:
+def create_cities(filename):
+    """
+        Reads coordinates from text file and creates list of tuples containing coords.
+        returns:
+            list : list of tuples
+    """
+    cities = []
+    coords = file_manager.read_pos_from_file(filename)
+    for c in coords:  
+        cities.append(City(c[0], c[1])) 
+    return cities
 
 
-    def __init__(self):
-        """
-            Constructor will read from data files and initialize each city.
-        """
-        self.cities = []
-
-        coords = file_manager.read_pos_from_file(file_manager.SAHARA_PATH)
-        for c in coords:  
-            self.cities.append(City(c[0], c[1])) 

@@ -1,10 +1,14 @@
+
+from numpy import random
+from evaluation import TSP_fitness
+
 class Route:
-    def __init__(self, cities, fitness):
+    def __init__(self, city_list):
         """
             Constructer creates new permutation and sets its list of cities and fitness.
         """
-        self.cities = []
-        self.fitness = -1   # default to -1 so we can gurantee it hasn't yet been calculated
+        self.cities = random.permutation(city_list).tolist()
+        self.calculate_fitness()
     
     def get_cities(self):
         """
@@ -18,16 +22,17 @@ class Route:
         """
         return self.fitness
 
-    def add_city(self, City):
-        """
-            Adds a provided City object to the list of cities.
-            args:
-                City : City object containing its coordinates.
-        """
-        self.cities.append(City)
-
     def calculate_fitness(self):
         """
             Calculate the fitness of this permutation.
+            returns:
+                float : fitness value
         """
-        self.fitness = -1 # TODO: call the evaluation function here once completed
+        self.fitness = int(TSP_fitness(self.cities))
+        return self.fitness
+
+    def __str__(self):
+        return str(self.cities)
+
+    def __repr__(self):
+        return str(self.cities)

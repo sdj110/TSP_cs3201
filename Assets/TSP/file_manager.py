@@ -5,6 +5,7 @@ import os.path
 CANADA_PATH = "data/TSP_Canada_4663.txt"
 URUGUAY_PATH = "data/TSP_Uruguay_734.txt"
 SAHARA_PATH = "data/TSP_WesternSahara_29.txt"
+TEST_PATH = "data/test_file_5.txt"
 
 def read_pos_from_file(filepath):
     """

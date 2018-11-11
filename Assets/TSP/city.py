@@ -19,13 +19,17 @@ class City:
     def calculate_distance(self, pos):
         """
             Returns the euclidean distance from this city and another city.
-            since tours are permutations of the set of all cities, direction
-            is not considered, therefore always returns abs value of distance.
             args:
                 pos : tuple representing another cities position ie P(x, y)
             returns:
                 float : the cities distance. 
         """
         return hypot(self.position[0] - pos[0], self.position[1] - pos[1])
+
+    def __str__(self):
+        return "(x:" + str(self.position[0]) + ", y:" + str(self.position[1]) + ")"
+
+    def __repr__(self):
+        return "(x:" + str(self.position[0]) + ", y:" + str(self.position[1]) + ")"
 
 
