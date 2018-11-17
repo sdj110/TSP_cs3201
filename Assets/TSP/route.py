@@ -3,11 +3,14 @@ from numpy import random
 from evaluation import TSP_fitness
 
 class Route:
-    def __init__(self, city_list):
+    def __init__(self, city_list, use_permutation=True):
         """
             Constructer creates new permutation and sets its list of cities and fitness.
         """
-        self.cities = random.permutation(city_list).tolist()
+        if use_permutation:
+            self.cities = random.permutation(city_list).tolist()
+        else:
+            self.cities = city_list
         self.calculate_fitness()
     
     def get_cities(self):
