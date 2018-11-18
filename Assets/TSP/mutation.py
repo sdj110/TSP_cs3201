@@ -9,13 +9,10 @@ def swap_mutation(individual):
            list : the same individual with two items swapped
     """
 
-    mutant = individual.copy()
+    mutant = individual.get_cities()
     first = randint(0, len(mutant)-1)
     second = randint(0, len(mutant)-1)
     if (second == first):
         second = (second + 1) % len(mutant)
     mutant[first], mutant[second] = mutant[second], mutant[first]
 
-    return mutant
-    
-       
