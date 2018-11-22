@@ -23,8 +23,8 @@ def order_crossover(parent0, parent1):
     for i in range(points[0], points[1] + 1):
         offspring[i] = parent0[i]
     i = points[1] + 1
+    j = i
     while offspring[i] == None:
-        j = i
         while parent1[j] in offspring:
             j = (j + 1) % individual_size
         offspring[i] = parent1[j]

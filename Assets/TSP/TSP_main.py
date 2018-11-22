@@ -10,21 +10,20 @@ from survivor_selection import survivor_selection
 from mutation import swap_mutation
 
 
-## TODO: figure out what these values should be.
-pop_size = 100
+pop_size = 100  #must be a multiple of 4
 mating_pool_size = int(pop_size * 0.5)
 tournament_size = 4
-mut_rate = 0.2
+mut_rate = 0.5
 xover_rate = 0.8
-gen_limit = 200
-staling_limit = 20
+gen_limit = 1000
+staling_limit = 10
 
 if __name__ == '__main__':
     current_gen = 0
     staling = 0
     prevAverage = 0
     ## Create initial population and calculate initial fitness
-    population = permutation(pop_size, create_cities(file_manager.SAHARA_PATH))
+    population = permutation(pop_size, create_cities(file_manager.URUGUAY_PATH))
     while current_gen < gen_limit and staling < staling_limit:
         parents = tournament_selection(population, mating_pool_size, tournament_size)
         r.shuffle(parents)
