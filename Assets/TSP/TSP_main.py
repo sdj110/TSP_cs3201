@@ -11,18 +11,21 @@ from mutation import swap_mutation
 
 
 ## TODO: figure out what these values should be.
-pop_size = 20
+pop_size = 100
 mating_pool_size = int(pop_size * 0.5)
-tournament_size = 3
-mut_rate = 0.1
+tournament_size = 4
+mut_rate = 0.2
 xover_rate = 0.8
-gen_limit = 10
+gen_limit = 200
+staling_limit = 20
 
 if __name__ == '__main__':
     current_gen = 0
+    staling = 0
+    prevAverage = 0
     ## Create initial population and calculate initial fitness
-    population = permutation(pop_size, create_cities(file_manager.TEST_PATH))
-    while current_gen < gen_limit:
+    population = permutation(pop_size, create_cities(file_manager.SAHARA_PATH))
+    while current_gen < gen_limit and staling < staling_limit:
         parents = tournament_selection(population, mating_pool_size, tournament_size)
         r.shuffle(parents)
         offspring = []
@@ -45,16 +48,27 @@ if __name__ == '__main__':
             i += 2
         population = survivor_selection(population, offspring)
         print("Generation ", current_gen)
-        for i in range(len(population)):
-            print("Member ", i, ": Fitness = ", population[i].get_fitness(), "; Route = ", population[i])
+        fitness = [x.get_fitness() for x in population]
+        print("Best fitness: ", min(fitness))
+        average = sum(fitness)/len(fitness)
+        print("Average fitness: ", average)
+        if (average == prevAverage):
+            staling += 1
+        else:
+            staling = 0
+        prevAverage = average
         current_gen += 1
     # print the final best solution(s)
-    k = 0
+    if (staling == staling_limit):
+        print("Population staled!")
+    else:
+        print("Gen limit reached!")
+    """k = 0
     fitness = [x.get_fitness() for x in population]
     for i in range (0, pop_size):
         if fitness[i] == min(fitness):
-            print("best solution", k, population[i], fitness[i])
-            k = k+1
+            print("best solution", k, fitness[i])
+            k = k+1"""
 
 
     
