@@ -9,7 +9,7 @@ def order_crossover(parent0, parent1):
             parent0 : list
             parent1 : list
         return:
-            Route object
+            List of Cities
     """
     individual_size = len(parent0)
     offspring = [None] * individual_size

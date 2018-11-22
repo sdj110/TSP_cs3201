@@ -1,4 +1,5 @@
 from random import randint
+from route import Route
 
 def swap_mutation(individual):
     """
@@ -12,7 +13,8 @@ def swap_mutation(individual):
     mutant = individual.get_cities()
     first = randint(0, len(mutant)-1)
     second = randint(0, len(mutant)-1)
-    if (second == first):
-        second = (second + 1) % len(mutant)
+    while (second == first):
+        second = randint(0, len(mutant)-1)
     mutant[first], mutant[second] = mutant[second], mutant[first]
+    return Route(mutant, False)
 

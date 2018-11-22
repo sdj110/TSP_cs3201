@@ -23,10 +23,9 @@ def tournament_selection(population, mating_pool_size, tournament_size):
             tournament.append(competitor)
         winner = tournament[0]
         for i in tournament:
-            if (population[i].get_fitness() > population[winner].get_fitness()):
+            if (population[i].get_fitness() < population[winner].get_fitness()):
                 winner = i
         # Mating pool is a list of route objects
         selected.append(population[winner])
         current_parent = current_parent + 1
-
     return selected

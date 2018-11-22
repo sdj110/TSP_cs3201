@@ -12,7 +12,7 @@ def survivor_selection(population, offspring):
     """
 
     total_population = population + offspring
-    total_population.sort(key=lambda x: x.get_fitness(), reverse=True)
+    total_population.sort(key=lambda x: x.get_fitness())
     new_population = total_population[:len(population)]
 
     return new_population
