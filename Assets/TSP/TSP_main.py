@@ -8,6 +8,7 @@ from route import Route
 from parent_selection import tournament_selection
 from survivor_selection import survivor_selection
 from mutation import swap_mutation
+from profiler import profile
 
 
 pop_size = 100  #must be a multiple of 4
@@ -18,12 +19,13 @@ xover_rate = 0.8
 gen_limit = 1000
 staling_limit = 10
 
-if __name__ == '__main__':
+@profile
+def main():
     current_gen = 0
     staling = 0
     prevAverage = 0
     ## Create initial population and calculate initial fitness
-    population = permutation(pop_size, create_cities(file_manager.URUGUAY_PATH))
+    population = permutation(pop_size, create_cities(file_manager.SAHARA_PATH))
     while current_gen < gen_limit and staling < staling_limit:
         parents = tournament_selection(population, mating_pool_size, tournament_size)
         r.shuffle(parents)
@@ -62,15 +64,9 @@ if __name__ == '__main__':
         print("Population staled!")
     else:
         print("Gen limit reached!")
-    """k = 0
-    fitness = [x.get_fitness() for x in population]
-    for i in range (0, pop_size):
-        if fitness[i] == min(fitness):
-            print("best solution", k, fitness[i])
-            k = k+1"""
 
-
-    
+if __name__ == '__main__':
+    main()
 
 
     
