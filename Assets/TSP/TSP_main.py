@@ -9,23 +9,26 @@ from parent_selection import tournament_selection
 from survivor_selection import survivor_selection
 from mutation import swap_mutation
 from mutation import reverse_mutation
+from mutation import scramble_mutation
+from mutation import heuristic_swap
 from profiler import profile
 
-pop_size = 100  #must be a multiple of 4
+pop_size = 500  #must be a multiple of 4
 mating_pool_size = int(pop_size * 0.5)
 tournament_size = 4
 mut_rate = 0.5
 xover_rate = 0.8
-gen_limit = 100
+gen_limit = 5000
 staling_limit = 10
 
 @profile
 def main():
     current_gen = 0
     staling = 0
-    prevAverage = 0
+    prevAverage = 1
     ## Create initial population and calculate initial fitness
-    population = permutation(pop_size, create_cities(file_manager.CANADA_PATH))
+    population = permutation(pop_size, create_cities(file_manager.URUGUAY_PATH))
+    stalingThreshold = len(population) * 10
     while current_gen < gen_limit and staling < staling_limit:
         parents = tournament_selection(population, mating_pool_size, tournament_size)
         r.shuffle(parents)
@@ -47,9 +50,9 @@ def main():
                 off1 = Route(parents[i+1].get_cities().copy(), False)
             ## mutation
             if r.random() < mut_rate:
-                off0 = reverse_mutation(off0)
+                off0 = heuristic_swap(off0)
             if r.random() < mut_rate:
-                off1 = reverse_mutation(off1)
+                off1 = heuristic_swap(off1)
             offspring.append(off0)
             offspring.append(off1)
             i += 2
@@ -61,7 +64,7 @@ def main():
         print("Best fitness: ", min(fitness))
         print("Average fitness: ", average)
 
-        if (average == prevAverage):
+        if (average/prevAverage > (stalingThreshold-1)/stalingThreshold and average/prevAverage < (stalingThreshold+1/stalingThreshold)):
             staling += 1
         else:
             staling = 0
