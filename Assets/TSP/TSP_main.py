@@ -10,7 +10,6 @@ from survivor_selection import survivor_selection
 from mutation import swap_mutation
 from profiler import profile
 
-
 pop_size = 100  #must be a multiple of 4
 mating_pool_size = int(pop_size * 0.5)
 tournament_size = 4
@@ -34,8 +33,14 @@ def main():
         while len(offspring) < mating_pool_size:
             ## Crossover
             if r.random() < xover_rate:
-                off0 = Route(order_crossover(parents[i].get_cities(), parents[i+1].get_cities()), False)
-                off1 = Route(order_crossover(parents[i+1].get_cities(), parents[i].get_cities()), False)
+                xover_offspring = order_crossover(parents[i].get_cities(), parents[i+1].get_cities())
+                off0 = Route(xover_offspring[0], False)
+                off1 = Route(xover_offspring[1], False)
+                """
+                # removed below is the old xover method
+                off0 = Route(order_crossover_OLD(parents[i].get_cities(), parents[i+1].get_cities()), False)
+                off1 = Route(order_crossover_OLD(parents[i+1].get_cities(), parents[i].get_cities()), False)
+                """
             else:
                 off0 = Route(parents[i].get_cities().copy(), False)
                 off1 = Route(parents[i+1].get_cities().copy(), False)
@@ -48,11 +53,13 @@ def main():
             offspring.append(off1)
             i += 2
         population = survivor_selection(population, offspring)
-        print("Generation ", current_gen)
         fitness = [x.get_fitness() for x in population]
-        print("Best fitness: ", min(fitness))
         average = sum(fitness)/len(fitness)
+
+        print("Generation ", current_gen)
+        print("Best fitness: ", min(fitness))
         print("Average fitness: ", average)
+
         if (average == prevAverage):
             staling += 1
         else:
@@ -65,9 +72,6 @@ def main():
     else:
         print("Gen limit reached!")
 
+
 if __name__ == '__main__':
     main()
-
-
-    
-    
