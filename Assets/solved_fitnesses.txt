@@ -1,0 +1,8 @@
+Sahara -> 27,603
+http://www.math.uwaterloo.ca/tsp/world/witour.html
+
+Uruguay -> 79,114
+http://www.math.uwaterloo.ca/tsp/world/uytour.html
+
+Canada -> 1,290,319
+http://www.math.uwaterloo.ca/tsp/world/catour.html
