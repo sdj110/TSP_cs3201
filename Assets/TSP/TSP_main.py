@@ -12,6 +12,7 @@ from mutation import reverse_mutation
 from mutation import scramble_mutation
 from mutation import heuristic_swap
 from profiler import profile
+import summary
 
 pop_size = 1000  #must be a multiple of 4
 mating_pool_size = int(pop_size * 0.5)
@@ -26,8 +27,10 @@ def main():
     current_gen = 0
     staling = 0
     prevAverage = 1
+    summaryAvgList = []
+    summaryBestList = []
     ## Create initial population and calculate initial fitness
-    population = permutation(pop_size, create_cities(file_manager.URUGUAY_PATH))
+    population = permutation(pop_size, create_cities(file_manager.SAHARA_PATH))
     stalingThreshold = len(population) * 10
     while current_gen < gen_limit and staling < staling_limit:
         parents = tournament_selection(population, mating_pool_size, tournament_size)
@@ -54,9 +57,13 @@ def main():
         population = survivor_selection(population, offspring)
         fitness = [x.get_fitness() for x in population]
         average = sum(fitness)/len(fitness)
+        bestFit = min(fitness)
+
+        summaryAvgList.append(average)
+        summaryBestList.append(bestFit)
 
         print("Generation ", current_gen)
-        print("Best fitness: ", min(fitness))
+        print("Best fitness: ", bestFit)
         print("Average fitness: ", average)
 
         if (average/prevAverage > (stalingThreshold-1)/stalingThreshold and average/prevAverage < (stalingThreshold+1/stalingThreshold)):
@@ -70,6 +77,7 @@ def main():
         print("Population staled!")
     else:
         print("Gen limit reached!")
+    summary.visualize_avg_best_fit(summaryAvgList, summaryBestList)
 
 
 if __name__ == '__main__':
