@@ -63,6 +63,7 @@ def heuristic_swap(individual):
            list : a route individual
        returns:
            list : the same individual with two items swapped
+           boolean : whether to switch to regular swap mutation
     """
     
     mutant = individual.get_cities()

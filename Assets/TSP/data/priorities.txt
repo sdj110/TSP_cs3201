@@ -1,0 +1,10 @@
+- Get route plot working
+- Implement dictionary
+- Remove redundant fitness checks
+-- Calculate fitness at population init
+-- Calculate fitness on offspring list before survivor selection
+-- If crossover fails, make direct copy of route
+-- Introduce boolean flag to only calculate fitness if necessary
+-- Remove automatic fitness calculation from Route init
+- Factor out City class
+- Dynamic mutation

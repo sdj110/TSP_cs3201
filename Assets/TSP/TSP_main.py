@@ -13,12 +13,12 @@ from mutation import scramble_mutation
 from mutation import heuristic_swap
 from profiler import profile
 
-pop_size = 500  #must be a multiple of 4
+pop_size = 1000  #must be a multiple of 4
 mating_pool_size = int(pop_size * 0.5)
 tournament_size = 4
-mut_rate = 0.5
-xover_rate = 0.8
-gen_limit = 5000
+mut_rate = 0.1
+xover_rate = 0.9
+gen_limit = 10000
 staling_limit = 10
 
 @profile
@@ -40,11 +40,6 @@ def main():
                 xover_offspring = order_crossover(parents[i].get_cities(), parents[i+1].get_cities())
                 off0 = Route(xover_offspring[0], False)
                 off1 = Route(xover_offspring[1], False)
-                """
-                # removed below is the old xover method
-                off0 = Route(order_crossover_OLD(parents[i].get_cities(), parents[i+1].get_cities()), False)
-                off1 = Route(order_crossover_OLD(parents[i+1].get_cities(), parents[i].get_cities()), False)
-                """
             else:
                 off0 = Route(parents[i].get_cities().copy(), False)
                 off1 = Route(parents[i+1].get_cities().copy(), False)
