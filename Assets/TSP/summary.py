@@ -38,11 +38,16 @@ def plot_route(bestRoute):
     plt.xlabel("Longitude")
     plt.ylabel("Latitude")
     plotRoute = bestRoute.get_cities()
-    routeLength = len(plotRoute)
+    xCoords = [x.get_position()[0] for x in plotRoute]
+    yCoords = [-y.get_position()[1] for y in plotRoute]
+    xCoords.append(plotRoute[0].get_position()[0])
+    yCoords.append(-plotRoute[0].get_position()[1])
+    plt.plot(yCoords, xCoords, c="k", marker="o", markersize=5, label="Cities")
+    """ routeLength = len(plotRoute)
     for x in range(routeLength): # loop through all points and draw cities and path
-        longitude = plotRoute[x].get_position()[1]
-        latitude = plotRoute[x].get_position()[0]
-        plt.plot(-longitude, latitude, c="k", marker="o", markersize=5, label="Cities")
+        longitude = plotRoute[x].get_position()[0]
+        latitude = plotRoute[x].get_position()[1]
+        plt.plot(longitude, latitude, c="k", marker="o", markersize=5, label="Cities")
         
         if x < routeLength-1:
             nextLong = plotRoute[x+1].get_position()[0] # I know long/lat seem backwards...
@@ -50,7 +55,7 @@ def plot_route(bestRoute):
         else: # if we're at the end of the route, make it go from the end to the start
             nextLong = plotRoute[0].get_position()[0]
             nextLat = plotRoute[0].get_position()[1]
-        plt.plot((-longitude, -latitude), (nextLong, nextLat)) #play with minus here
+        plt.plot((longitude, latitude), (nextLong, nextLat)) #play with minus here"""
 
 def visualize():
     """
