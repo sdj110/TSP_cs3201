@@ -1,16 +1,15 @@
 from route import Route
+import city_manager
 
-## TODO: A good heuristic here would be ideal.
-def permutation (pop_size, cities):
+def permutation (pop_size):
     """
-        Initialize the population as a permutation  of the set of all cities.
+        Initialize the population as a permutation of the set of all cities.
         args:
             pop_size : int
-            cities : List of City objects
         returns:
-            list of cities
+            list of Routes
     """
     population = []
     for i in range(pop_size):
-        population.append(Route(cities))
+        population.append(Route(city_manager.create_tour()))
     return population

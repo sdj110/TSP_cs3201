@@ -1,4 +1,5 @@
 
+from math import hypot
 
 def TSP_fitness(individual):
     """
@@ -10,5 +11,16 @@ def TSP_fitness(individual):
     """
     distance = 0
     for x in range(len(individual)):
-        distance += individual[x].calculate_distance(individual[(x+1) % len(individual)].position)
+        distance += calculate_distance(individual[x], individual[(x+1) % len(individual)])
     return distance
+
+def calculate_distance(city1, city2):
+        """
+            Returns the euclidean distance from this city and another city.
+            args:
+                city1: tuple representing the first cities x,y coords
+                city2: tuple representing the second cities x,y coords
+            returns:
+                float : the cities distance. 
+        """
+        return hypot(city1[0] - city2[0], city1[1] - city2[1])
