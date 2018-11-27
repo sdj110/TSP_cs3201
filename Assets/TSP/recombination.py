@@ -7,12 +7,13 @@ def order_crossover(parent1, parent2):
     """
         Performs order crossover to create two offspring from parent1 and parent2.
         args:
-            parent0 : list
             parent1 : list
+            parent2 : list
         return:
             tuple of two lists
     """
     individual_size = len(parent1)
+
     c1 = deque()
     c2 = deque()
 
@@ -38,6 +39,7 @@ def order_crossover(parent1, parent2):
             c2.appendleft(None)
         else:
             c2.append(parent2[i])
+
     # Use rotate to shift elements in children until all None values are located inside
     # childs [points[0], points[1]] index region.
     c1.rotate(points[0])

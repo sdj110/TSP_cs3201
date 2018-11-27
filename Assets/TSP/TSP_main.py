@@ -1,7 +1,7 @@
 
 import random as r
 import file_manager
-from city_manager import create_cities
+from city_manager import init_city_dict
 from initialization import permutation
 from recombination import order_crossover
 from route import Route
@@ -26,11 +26,14 @@ summaryBestList = []
 
 @profile
 def main():
+    init_city_dict(file_manager.SAHARA_PATH)
     current_gen = 0
     staling = 0
     prevAverage = 1
+
     ## Create initial population and calculate initial fitness
-    population = permutation(pop_size, create_cities(file_manager.SAHARA_PATH))
+    population = permutation(pop_size)
+
     useHeuristic = False
     useSwap = False
     staled = False
@@ -38,6 +41,7 @@ def main():
     swapThreshold = len(population) * 5
     stalingThreshold = len(population) * 10
     currentThreshold = heuristicThreshold
+
     while current_gen < gen_limit and not staled:
         parents = tournament_selection(population, mating_pool_size, tournament_size)
         r.shuffle(parents)
@@ -46,27 +50,33 @@ def main():
         while len(offspring) < mating_pool_size:
             ## Crossover
             if r.random() < xover_rate:
-                xover_offspring = order_crossover(parents[i].get_cities(), parents[i+1].get_cities())
-                off0 = Route(xover_offspring[0], False)
-                off1 = Route(xover_offspring[1], False)
+                xover_offspring = order_crossover(parents[i].get_city_ids(), parents[i+1].get_city_ids())
+                off0 = Route(xover_offspring[0])
+                off1 = Route(xover_offspring[1])
+
             else:
-                off0 = Route(parents[i].get_cities().copy(), False)
-                off1 = Route(parents[i+1].get_cities().copy(), False)
+                off0 = parents[i].create_copy()
+                off1 = parents[i+1].create_copy()
+
             ## mutation
             if r.random() < mut_rate:
                 if (useSwap):
-                    off0 = swap_mutation(off0)
+                    off0 = swap_mutation(off0.get_city_ids())
                 elif (useHeuristic):
                     off0 = heuristic_swap(off0)
                 else:
-                    off0 = scramble_mutation(off0)
+                    off0 = scramble_mutation(off0.get_city_ids())
+
             if r.random() < mut_rate:
                 if (useSwap):
-                    off1 = swap_mutation(off1)
+                    off1 = swap_mutation(off1.get_city_ids())
                 elif (useHeuristic):
                     off1 = heuristic_swap(off1)
                 else:
-                    off1 = scramble_mutation(off1)
+                    off1 = scramble_mutation(off1.get_city_ids())
+
+            ## Add new offspring
+            ## TODO: check fitness here after removing fitness from Route constructor
             offspring.append(off0)
             offspring.append(off1)
             i += 2
@@ -105,11 +115,13 @@ def main():
         print("Population staled!")
     else:
         print("Gen limit reached!")
+    
     # output the graphs
     summary.plot_avg_best_fit(summaryAvgList, summaryBestList)
     summary.plot_route(population[fitness.index(min(fitness))])
     summary.visualize()
     #^^^ COMMENT OUT IF YOU NEED PROFILER
+
 
 if __name__ == '__main__':
     main()

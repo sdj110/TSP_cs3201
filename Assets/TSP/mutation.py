@@ -1,8 +1,9 @@
 from random import randint
 from random import shuffle
 from route import Route
+from evaluation import calculate_distance
 
-def swap_mutation(individual):
+def swap_mutation(mutant):
     """
        Swaps two items in a permutation.
        args:
@@ -10,16 +11,14 @@ def swap_mutation(individual):
        returns:
            list : the same individual with two items swapped
     """
-
-    mutant = individual.get_cities()
     first = randint(0, len(mutant)-1)
     second = randint(0, len(mutant)-1)
     while (second == first):
         second = randint(0, len(mutant)-1)
     mutant[first], mutant[second] = mutant[second], mutant[first]
-    return Route(mutant, False)
+    return Route(mutant)
 
-def reverse_mutation(individual):
+def reverse_mutation(mutant):
     """
        Reverses a segment of a permutation.
        args:
@@ -27,16 +26,14 @@ def reverse_mutation(individual):
        returns:
            list : the same individual with a segment reversed
     """
-
-    mutant = individual.get_cities()
     first = randint(0, len(mutant)-1)
     second = randint(0, len(mutant))
     while (second == first):
         second = randint(0, len(mutant))
     mutant[first:second] = reversed(mutant[first:second])
-    return Route(mutant, False)
+    return Route(mutant)
 
-def scramble_mutation(individual):
+def scramble_mutation(mutant):
     """
        Scrambles a segment of a permutation.
        args:
@@ -44,8 +41,6 @@ def scramble_mutation(individual):
        returns:
            list : the same individual with a segment scrambled
     """
-
-    mutant = individual.get_cities()
     first = randint(0, len(mutant)-1)
     second = randint(0, len(mutant))
     while (second == first):
@@ -53,7 +48,7 @@ def scramble_mutation(individual):
     copy = mutant[first:second]
     shuffle(copy)
     mutant[first:second] = copy
-    return Route(mutant, False)
+    return Route(mutant)
 
 def heuristic_swap(individual):
     """
@@ -65,8 +60,8 @@ def heuristic_swap(individual):
            list : the same individual with two items swapped
            boolean : whether to switch to regular swap mutation
     """
-    
     mutant = individual.get_cities()
+    city_ids = individual.get_city_ids()
     fitness = individual.get_fitness()
     threshold = fitness / (len(mutant) * 2)
     reject = True
@@ -76,16 +71,16 @@ def heuristic_swap(individual):
         second = randint(0, len(mutant)-1)
         while (second == first):
             second = randint(0, len(mutant)-1)
-        firstFit = mutant[first].calculate_distance(mutant[(first+1) % len(mutant)].position)
-        firstFit += mutant[first].calculate_distance(mutant[(first-1) % len(mutant)].position)
+        firstFit = calculate_distance(mutant[first], mutant[(first+1) % len(mutant)])
+        firstFit += calculate_distance(mutant[first], mutant[(first-1) % len(mutant)])
         firstFit /= 2
         if (firstFit < threshold):
             reject = True
             continue
-        secondFit = mutant[second].calculate_distance(mutant[(second+1) % len(mutant)].position)
-        secondFit += mutant[second].calculate_distance(mutant[(second-1) % len(mutant)].position)
+        secondFit = calculate_distance(mutant[second], mutant[(second+1) % len(mutant)])
+        secondFit += calculate_distance(mutant[second], mutant[(second-1) % len(mutant)])
         secondFit /= 2
         if (secondFit < threshold):
             reject = True
-    mutant[first], mutant[second] = mutant[second], mutant[first]
-    return Route(mutant, False)
+    city_ids[first], city_ids[second] = city_ids[second], city_ids[first]
+    return Route(city_ids)

@@ -7,6 +7,12 @@ URUGUAY_PATH = "data/TSP_Uruguay_734.txt"
 SAHARA_PATH = "data/TSP_WesternSahara_29.txt"
 TEST_PATH = "data/test_file_5.txt"
 
+def read_file(filepath):
+    if (os.path.isfile(filepath)):
+        with open(filepath) as f:
+            for line in f:
+                yield line
+
 def read_pos_from_file(filepath):
     """
         Given a file path will read from file and parse position data

@@ -1,21 +1,25 @@
 
-from numpy import random
 from evaluation import TSP_fitness
+from city_manager import generate_tour
+from copy import deepcopy
 
 class Route:
-    def __init__(self, city_list, use_permutation=True):
+    def __init__(self, city_list):
         """
             Constructer creates new permutation and sets its list of cities and fitness.
         """
-        if use_permutation:
-            self.cities = random.permutation(city_list).tolist()
-        else:
-            self.cities = city_list
+        self.cities = city_list
         self.calculate_fitness()
     
     def get_cities(self):
         """
             Returns a list containing all cities within this permutation.
+        """
+        return generate_tour(self.cities)
+
+    def get_city_ids(self):
+        """
+            returns a list of each cities id.
         """
         return self.cities
 
@@ -31,8 +35,11 @@ class Route:
             returns:
                 float : fitness value
         """
-        self.fitness = int(TSP_fitness(self.cities))
+        self.fitness = int(TSP_fitness(self.get_cities()))
         return self.fitness
+
+    def create_copy(self):
+        return deepcopy(self)
 
     def __str__(self):
         return str(self.cities)
