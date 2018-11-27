@@ -17,16 +17,44 @@ def summary_avg_best_fit():
 #        print("Generation "+z+": Avg. Fit:", summaryAvgList[z], "Best Fit:", summaryBestList[z])
 # ^commented out for now, will refactor/fix variables if we decide to use this.
 
-def visualize_avg_best_fit(sumAvg, sumBest):
+def plot_avg_best_fit(sumAvg, sumBest):
     """
         Creates a graph with the average and best fitness plotted over the generations.
-        Run this after the goal is reached (and after summary_avg_best_fit() I guess).
+        Run this after the goal is reached or the algorithm stales.
     """
-    plt.plot(sumAvg)
-    plt.plot(sumBest)
+    plt.figure(1) # sets the following lines to all work on the first graph
+    plt.plot(sumAvg, label="Average Fitness")
+    plt.plot(sumBest, label="Best Fitness")
     plt.xlabel("Generation")
     plt.ylabel("Fitness")
-    plt.legend()    #TODO: get legend working
-    plt.show()
+    plt.legend()
 
-#TODO: a general visualizer for the points in a Route and the path taken in them.
+def plot_route(bestRoute):
+    """
+        Creates a graph with the route the best individual took across the points.
+        Run this after the goal is reached on the algorithm stales. 
+    """
+    plt.figure(2) # sets the following lines to all work on the second graph
+    plt.xlabel("Longitude")
+    plt.ylabel("Latitude")
+    plotRoute = bestRoute.get_cities()
+    routeLength = len(plotRoute)
+    for x in range(routeLength): # loop through all points and draw cities and path
+        longitude = plotRoute[x].get_position()[1]
+        latitude = plotRoute[x].get_position()[0]
+        plt.plot(-longitude, latitude, c="k", marker="o", markersize=5, label="Cities")
+        
+        if x < routeLength-1:
+            nextLong = plotRoute[x+1].get_position()[0] # I know long/lat seem backwards...
+            nextLat = plotRoute[x+1].get_position()[1]  # but I get better results like this??
+        else: # if we're at the end of the route, make it go from the end to the start
+            nextLong = plotRoute[0].get_position()[0]
+            nextLat = plotRoute[0].get_position()[1]
+        plt.plot((-longitude, -latitude), (nextLong, nextLat)) #play with minus here
+
+def visualize():
+    """
+        Will display the graphs created by plot_avg_best_fit and plot_route.
+        Run this after the two above plot_ functions have been run.
+    """
+    plt.show()

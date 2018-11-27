@@ -30,7 +30,7 @@ def main():
     staling = 0
     prevAverage = 1
     ## Create initial population and calculate initial fitness
-    population = permutation(pop_size, create_cities(file_manager.URUGUAY_PATH))
+    population = permutation(pop_size, create_cities(file_manager.SAHARA_PATH))
     useHeuristic = False
     useSwap = False
     staled = False
@@ -105,8 +105,11 @@ def main():
         print("Population staled!")
     else:
         print("Gen limit reached!")
-
+    # output the graphs
+    summary.plot_avg_best_fit(summaryAvgList, summaryBestList)
+    summary.plot_route(population[fitness.index(min(fitness))])
+    summary.visualize()
+    #^^^ COMMENT OUT IF YOU NEED PROFILER
 
 if __name__ == '__main__':
     main()
-    summary.visualize_avg_best_fit(summaryAvgList, summaryBestList)
