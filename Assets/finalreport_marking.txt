@@ -1,0 +1,11 @@
+1. Algorithm design and advanced technique(s) (20 marks)
+
+2. Algorithm speed (20 marks)
+
+3. Solution quality (20 marks)
+
+4. Report writing (clearness, flow, organization) (20 marks)
+
+5. Use of figures and tables (10 marks)
+
+6. Code ease to read and use (10 marks)
