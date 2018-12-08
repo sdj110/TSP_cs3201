@@ -1,18 +1,38 @@
 
 from collections import deque
 from numpy import random
+from profiler import profile
 
-def order_crossover(parent1, parent2):
+
+def order_crossover(p1, p2):
+    individual_size = len(p1)
+    # generate 2 random ints from uniform distribution
+    points = random.randint(1, individual_size - 1, 2) 
+    if points[0] > points[1]:
+        points[0], points[1] = points[1], points[0]
+
+    off1 = [x for x in p2[points[0]:points[1]]]
+    off2 = [x for x in p1[points[0]:points[1]]]
+
+    for i in range(individual_size - 1, -1, -1):
+        j = (i + points[1]) % individual_size
+        if j >= points[0] and j < points[1]:
+            continue
+        off1.append(p2[j])
+        off2.append(p1[j])
+    return (off1, off2)
+
+#region OLD CROSSOVERS. REMOVE SOON
+def order_crossover_CURRENT(parent1, parent2):
     """
         Performs order crossover to create two offspring from parent1 and parent2.
         args:
+            parent0 : list
             parent1 : list
-            parent2 : list
         return:
             tuple of two lists
     """
     individual_size = len(parent1)
-
     c1 = deque()
     c2 = deque()
 
@@ -38,7 +58,6 @@ def order_crossover(parent1, parent2):
             c2.appendleft(None)
         else:
             c2.append(parent2[i])
-
     # Use rotate to shift elements in children until all None values are located inside
     # childs [points[0], points[1]] index region.
     c1.rotate(points[0])
@@ -58,7 +77,6 @@ def order_crossover(parent1, parent2):
     # if this is expensive it might make more sense to use deques instead of lists since
     # this will be called many times.
     return ([x for x in c1], [x for x in c2])
-
 
 def order_crossover_OLD(parent0, parent1):
     """
@@ -90,3 +108,15 @@ def order_crossover_OLD(parent0, parent1):
         i = (i + 1) % individual_size
     return offspring
 
+#endregion
+
+
+def main():
+    p1 = [1,2,3,4,5,6,7]
+    p2 = [3,1,7,6,2,5,4]
+
+    for i in range(1):
+        order_crossover(p1, p2)
+
+if __name__ == '__main__':
+    main()
