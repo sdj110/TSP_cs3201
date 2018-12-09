@@ -35,7 +35,7 @@ class Route:
             returns:
                 float : fitness value
         """
-        self.fitness = int(TSP_fitness(self.get_cities()))
+        self.fitness = int(TSP_fitness(self.cities))
         return self.fitness
 
     def create_copy(self):

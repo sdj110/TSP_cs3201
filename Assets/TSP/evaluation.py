@@ -1,5 +1,5 @@
 
-from math import hypot
+from city_manager import DISTANCE_DICT
 
 def TSP_fitness(individual):
     """
@@ -23,4 +23,4 @@ def calculate_distance(city1, city2):
             returns:
                 float : the cities distance. 
         """
-        return hypot(city1[0] - city2[0], city1[1] - city2[1])
+        return DISTANCE_DICT[city1][city2]
