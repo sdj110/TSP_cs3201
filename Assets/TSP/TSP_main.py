@@ -6,6 +6,7 @@ from initialization import permutation
 from recombination import order_crossover
 from route import Route
 from parent_selection import tournament_selection
+from parent_selection import multi_winner_tourney_selection
 from survivor_selection import survivor_selection
 from mutation import swap_mutation
 from mutation import reverse_mutation
@@ -17,6 +18,8 @@ import summary
 pop_size = 1000  #must be a multiple of 4
 mating_pool_size = int(pop_size * 0.5)
 tournament_size = 4
+mw_tournament_size = 100    #used for the multiple winner tourneys
+mw_tournament_winners = 10  # ^
 mut_rate = 0.1
 xover_rate = 0.9
 gen_limit = 10000
@@ -24,10 +27,9 @@ staling_limit = 10
 summaryAvgList = []
 summaryBestList = []
 
-#@profile
+@profile
 def main():
-    initialize(file_manager.URUGUAY_PATH)
-    print("START:")
+    initialize(file_manager.SAHARA_PATH)
     current_gen = 0
     staling = 0
     prevAverage = 1
@@ -44,7 +46,9 @@ def main():
     currentThreshold = heuristicThreshold
 
     while current_gen < gen_limit and not staled:
-        parents = tournament_selection(population, mating_pool_size, tournament_size)
+        # Switch between tourney and multi-winner-tourney here
+        #parents = tournament_selection(population, mating_pool_size, tournament_size)
+        parents = multi_winner_tourney_selection(population, mating_pool_size, mw_tournament_size, mw_tournament_winners)
         r.shuffle(parents)
         offspring = []
         i = 0
@@ -117,13 +121,11 @@ def main():
     else:
         print("Gen limit reached!")
     
-    """
     # output the graphs
     summary.plot_avg_best_fit(summaryAvgList, summaryBestList)
     summary.plot_route(population[fitness.index(min(fitness))])
     summary.visualize()
     #^^^ COMMENT OUT IF YOU NEED PROFILER
-    """
 
 
 if __name__ == '__main__':
