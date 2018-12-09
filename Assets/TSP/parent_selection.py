@@ -58,7 +58,7 @@ def multi_winner_tourney_selection(population, mating_pool_size, tournament_size
             winners.append(j) #add the candidate to the end of the winners list
             winners = sort_winners(population, winners, len(winners)-1) #sort the winners, removing the worst one
         for k in winners:
-            selected.append(winners[k])
+            selected.append(population[k])
         current_parent = current_parent + tournament_winners
     # ensure that the mating pool is the correct size 
     while current_parent > mating_pool_size:
@@ -80,4 +80,4 @@ def sort_winners(population, winners, competitor_loc):
         competitor = winners[competitor_loc]
         winners[competitor_loc] = winners[competitor_loc-1] #swap the competitor with the worse individual
         winners[competitor_loc-1] = competitor
-        sort_winners(population, winners, competitor_loc-1) #recursion
+        return sort_winners(population, winners, competitor_loc-1) #recursion
