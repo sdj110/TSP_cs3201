@@ -1,7 +1,7 @@
 
 import random as r
 import file_manager
-from city_manager import init_city_dict
+from city_manager import initialize
 from initialization import permutation
 from recombination import order_crossover
 from route import Route
@@ -24,9 +24,10 @@ staling_limit = 10
 summaryAvgList = []
 summaryBestList = []
 
-@profile
+#@profile
 def main():
-    init_city_dict(file_manager.SAHARA_PATH)
+    initialize(file_manager.URUGUAY_PATH)
+    print("START:")
     current_gen = 0
     staling = 0
     prevAverage = 1
@@ -116,11 +117,13 @@ def main():
     else:
         print("Gen limit reached!")
     
+    """
     # output the graphs
     summary.plot_avg_best_fit(summaryAvgList, summaryBestList)
     summary.plot_route(population[fitness.index(min(fitness))])
     summary.visualize()
     #^^^ COMMENT OUT IF YOU NEED PROFILER
+    """
 
 
 if __name__ == '__main__':
