@@ -60,8 +60,7 @@ def heuristic_swap(individual):
            list : the same individual with two items swapped
            boolean : whether to switch to regular swap mutation
     """
-    mutant = individual.get_cities()
-    city_ids = individual.get_city_ids()
+    mutant = individual.get_city_ids()
     fitness = individual.get_fitness()
     threshold = fitness / (len(mutant) * 2)
     reject = True
@@ -82,5 +81,5 @@ def heuristic_swap(individual):
         secondFit /= 2
         if (secondFit < threshold):
             reject = True
-    city_ids[first], city_ids[second] = city_ids[second], city_ids[first]
-    return Route(city_ids)
+    mutant[first], mutant[second] = mutant[second], mutant[first]
+    return Route(mutant)
