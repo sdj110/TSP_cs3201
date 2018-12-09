@@ -13,6 +13,7 @@ from mutation import reverse_mutation
 from mutation import scramble_mutation
 from mutation import heuristic_swap
 from profiler import profile
+from datetime import datetime
 import summary
 
 pop_size = 1000  #must be a multiple of 4
@@ -27,9 +28,11 @@ staling_limit = 10
 summaryAvgList = []
 summaryBestList = []
 
-@profile
+#@profile
 def main():
     initialize(file_manager.SAHARA_PATH)
+    startTime = datetime.now()
+    print("START:")
     current_gen = 0
     staling = 0
     prevAverage = 1
@@ -47,8 +50,8 @@ def main():
 
     while current_gen < gen_limit and not staled:
         # Switch between tourney and multi-winner-tourney here
-        #parents = tournament_selection(population, mating_pool_size, tournament_size)
-        parents = multi_winner_tourney_selection(population, mating_pool_size, mw_tournament_size, mw_tournament_winners)
+        parents = tournament_selection(population, mating_pool_size, tournament_size)
+        #parents = multi_winner_tourney_selection(population, mating_pool_size, mw_tournament_size, mw_tournament_winners)
         r.shuffle(parents)
         offspring = []
         i = 0
@@ -121,6 +124,9 @@ def main():
     else:
         print("Gen limit reached!")
     
+    endTime = datetime.now()
+    deltaT = endTime-startTime
+    print("Completed in:", deltaT)
     # output the graphs
     summary.plot_avg_best_fit(summaryAvgList, summaryBestList)
     summary.plot_route(population[fitness.index(min(fitness))])
