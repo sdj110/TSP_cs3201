@@ -1,0 +1,601 @@
+{
+    "file": "s",
+    "elapsed_time": "0:00:08.258981",
+    "generation": 170,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:08.229803",
+    "generation": 162,
+    "best_fitness": 28145,
+    "avg_fitness": 28145.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.608309",
+    "generation": 157,
+    "best_fitness": 28229,
+    "avg_fitness": 28229.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.495716",
+    "generation": 154,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.567055",
+    "generation": 155,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:08.108505",
+    "generation": 167,
+    "best_fitness": 27748,
+    "avg_fitness": 27748.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.238849",
+    "generation": 149,
+    "best_fitness": 28735,
+    "avg_fitness": 28735.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.849530",
+    "generation": 162,
+    "best_fitness": 27748,
+    "avg_fitness": 27748.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:08.099045",
+    "generation": 165,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:08.025975",
+    "generation": 165,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.879208",
+    "generation": 153,
+    "best_fitness": 27748,
+    "avg_fitness": 27748.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:08.889242",
+    "generation": 181,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:09.539005",
+    "generation": 188,
+    "best_fitness": 28229,
+    "avg_fitness": 28229.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.915245",
+    "generation": 160,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.590728",
+    "generation": 155,
+    "best_fitness": 27748,
+    "avg_fitness": 27748.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.857678",
+    "generation": 154,
+    "best_fitness": 27748,
+    "avg_fitness": 27748.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:08.567026",
+    "generation": 173,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.173640",
+    "generation": 146,
+    "best_fitness": 27748,
+    "avg_fitness": 27748.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.730507",
+    "generation": 157,
+    "best_fitness": 28042,
+    "avg_fitness": 28042.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.003618",
+    "generation": 141,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.494810",
+    "generation": 152,
+    "best_fitness": 27748,
+    "avg_fitness": 27748.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:08.614383",
+    "generation": 175,
+    "best_fitness": 28042,
+    "avg_fitness": 28042.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.463070",
+    "generation": 151,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.116657",
+    "generation": 144,
+    "best_fitness": 28082,
+    "avg_fitness": 28082.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.933311",
+    "generation": 161,
+    "best_fitness": 28082,
+    "avg_fitness": 28082.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:09.427533",
+    "generation": 191,
+    "best_fitness": 28509,
+    "avg_fitness": 28509.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:08.594849",
+    "generation": 175,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.875005",
+    "generation": 159,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:08.237417",
+    "generation": 167,
+    "best_fitness": 27748,
+    "avg_fitness": 27748.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.975090",
+    "generation": 162,
+    "best_fitness": 28189,
+    "avg_fitness": 28189.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:08.803474",
+    "generation": 179,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:08.750321",
+    "generation": 177,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.458291",
+    "generation": 151,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:08.365257",
+    "generation": 162,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.671888",
+    "generation": 153,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.647954",
+    "generation": 156,
+    "best_fitness": 28082,
+    "avg_fitness": 28082.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:08.260729",
+    "generation": 169,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.368289",
+    "generation": 150,
+    "best_fitness": 28019,
+    "avg_fitness": 28019.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:08.485020",
+    "generation": 172,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.898838",
+    "generation": 160,
+    "best_fitness": 27748,
+    "avg_fitness": 27748.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:09.553062",
+    "generation": 174,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.196576",
+    "generation": 138,
+    "best_fitness": 27748,
+    "avg_fitness": 27748.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.693822",
+    "generation": 156,
+    "best_fitness": 28145,
+    "avg_fitness": 28145.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:10.628927",
+    "generation": 176,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:09.499771",
+    "generation": 171,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.891393",
+    "generation": 163,
+    "best_fitness": 28082,
+    "avg_fitness": 28082.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.486845",
+    "generation": 154,
+    "best_fitness": 27748,
+    "avg_fitness": 27748.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.585333",
+    "generation": 157,
+    "best_fitness": 28145,
+    "avg_fitness": 28145.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:08.567985",
+    "generation": 177,
+    "best_fitness": 28229,
+    "avg_fitness": 28229.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:08.078688",
+    "generation": 164,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:06.397385",
+    "generation": 132,
+    "best_fitness": 28777,
+    "avg_fitness": 28777.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.007766",
+    "generation": 145,
+    "best_fitness": 27748,
+    "avg_fitness": 27748.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.756075",
+    "generation": 161,
+    "best_fitness": 28145,
+    "avg_fitness": 28145.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.102648",
+    "generation": 146,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.530535",
+    "generation": 155,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.964098",
+    "generation": 163,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.976213",
+    "generation": 165,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:08.889425",
+    "generation": 184,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.278340",
+    "generation": 150,
+    "best_fitness": 28019,
+    "avg_fitness": 28019.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:08.465797",
+    "generation": 175,
+    "best_fitness": 28042,
+    "avg_fitness": 28042.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.560888",
+    "generation": 156,
+    "best_fitness": 27748,
+    "avg_fitness": 27748.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:08.453453",
+    "generation": 175,
+    "best_fitness": 27748,
+    "avg_fitness": 27748.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:08.224678",
+    "generation": 170,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.898798",
+    "generation": 163,
+    "best_fitness": 27748,
+    "avg_fitness": 27748.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:08.007941",
+    "generation": 166,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.377221",
+    "generation": 153,
+    "best_fitness": 28055,
+    "avg_fitness": 28144.955
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.346908",
+    "generation": 149,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.886400",
+    "generation": 163,
+    "best_fitness": 27748,
+    "avg_fitness": 27748.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:08.830405",
+    "generation": 182,
+    "best_fitness": 27601,
+    "avg_fitness": 27605.557
+}{
+    "file": "s",
+    "elapsed_time": "0:00:08.206687",
+    "generation": 169,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:08.453959",
+    "generation": 174,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:08.259480",
+    "generation": 171,
+    "best_fitness": 27872,
+    "avg_fitness": 28146.02
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.342486",
+    "generation": 152,
+    "best_fitness": 27748,
+    "avg_fitness": 27748.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:08.636976",
+    "generation": 179,
+    "best_fitness": 27601,
+    "avg_fitness": 27604.3255
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.460898",
+    "generation": 154,
+    "best_fitness": 28189,
+    "avg_fitness": 28189.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.683335",
+    "generation": 159,
+    "best_fitness": 28042,
+    "avg_fitness": 28042.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.459735",
+    "generation": 154,
+    "best_fitness": 27748,
+    "avg_fitness": 27748.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.377220",
+    "generation": 152,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.310359",
+    "generation": 151,
+    "best_fitness": 28229,
+    "avg_fitness": 28229.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.200140",
+    "generation": 147,
+    "best_fitness": 28470,
+    "avg_fitness": 28470.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:08.400092",
+    "generation": 174,
+    "best_fitness": 27748,
+    "avg_fitness": 27748.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.855362",
+    "generation": 162,
+    "best_fitness": 28082,
+    "avg_fitness": 28082.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:08.398178",
+    "generation": 173,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.577712",
+    "generation": 146,
+    "best_fitness": 27748,
+    "avg_fitness": 27748.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:08.081494",
+    "generation": 167,
+    "best_fitness": 28292,
+    "avg_fitness": 28292.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:08.161136",
+    "generation": 167,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:08.039192",
+    "generation": 166,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:09.588245",
+    "generation": 182,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:08.489515",
+    "generation": 175,
+    "best_fitness": 27748,
+    "avg_fitness": 27748.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.669894",
+    "generation": 158,
+    "best_fitness": 27748,
+    "avg_fitness": 27748.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:09.203739",
+    "generation": 185,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.107295",
+    "generation": 144,
+    "best_fitness": 28189,
+    "avg_fitness": 28189.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:08.718468",
+    "generation": 180,
+    "best_fitness": 28082,
+    "avg_fitness": 28082.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.285521",
+    "generation": 151,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:09.226632",
+    "generation": 191,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:06.611807",
+    "generation": 135,
+    "best_fitness": 28588,
+    "avg_fitness": 28588.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:08.154567",
+    "generation": 164,
+    "best_fitness": 27601,
+    "avg_fitness": 27601.0
+}{
+    "file": "s",
+    "elapsed_time": "0:00:08.277858",
+    "generation": 170,
+    "best_fitness": 28588,
+    "avg_fitness": 28588.0135
+}{
+    "file": "s",
+    "elapsed_time": "0:00:08.992916",
+    "generation": 184,
+    "best_fitness": 27601,
+    "avg_fitness": 27602.0485
+}{
+    "file": "s",
+    "elapsed_time": "0:00:07.952940",
+    "generation": 162,
+    "best_fitness": 27748,
+    "avg_fitness": 27748.0
+}
