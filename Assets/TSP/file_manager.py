@@ -1,4 +1,5 @@
 import os.path
+import json
 
 ## Module to make reading from data files easier.
 ## create constant strings to store filepaths
@@ -8,6 +9,13 @@ SAHARA_PATH = "data/TSP_WesternSahara_29.txt"
 TEST_PATH = "data/test_file_5.txt"
 
 def read_file(filepath):
+    """
+        Reads file at filepath line by line
+        args:
+            filepath : string
+        returns:
+            generator of strings
+    """
     if (os.path.isfile(filepath)):
         with open(filepath) as f:
             for line in f:
@@ -31,4 +39,14 @@ def read_pos_from_file(filepath):
         return data
     else:
         print("ERROR: file at path '", filepath, "' could not be found.")
+
+def save_to_file(filename, data):
+    """
+        Save a python dictionary as a json file.
+        args: 
+            filename : string
+            data : dictionary
+    """
+    with open(filename, 'a') as out:
+     json.dump(data, out, sort_keys = False, indent = 4)
     
