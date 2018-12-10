@@ -12,7 +12,6 @@ def tournament_selection(population, mating_pool_size, tournament_size):
         returns:
             list : the selected mating pool
     """
-
     selected = []
     current_parent = 0
     while (current_parent < mating_pool_size):
@@ -42,7 +41,6 @@ def multi_winner_tourney_selection(population, mating_pool_size, tournament_size
         returns:
             list : the selected mating pool
     """
-
     selected = []
     current_parent = 0
     while (current_parent < mating_pool_size):

@@ -82,9 +82,4 @@ def create_tour():
     """
     return permutation([i for i in range(1, NUM_CITIES + 1)]).tolist()
 
-if __name__ == '__main__':
-    init_city_dict(file_manager.TEST_PATH)
-    print(create_tour())
-    
-
 

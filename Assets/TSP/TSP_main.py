@@ -12,7 +12,6 @@ from mutation import swap_mutation
 from mutation import reverse_mutation
 from mutation import scramble_mutation
 from mutation import heuristic_swap
-from profiler import profile
 from datetime import datetime
 import summary
 
@@ -37,7 +36,6 @@ def parse_argv():
     else:
         return file_manager.SAHARA_PATH
 
-#@profile
 def main():
     initialize(parse_argv())
     startTime = datetime.now()
@@ -93,7 +91,6 @@ def main():
                     off1 = scramble_mutation(off1.get_city_ids())
 
             ## Add new offspring
-            ## TODO: check fitness here after removing fitness from Route constructor
             offspring.append(off0)
             offspring.append(off1)
             i += 2
@@ -140,8 +137,6 @@ def main():
     summary.plot_avg_best_fit(summaryAvgList, summaryBestList)
     summary.plot_route(population[fitness.index(min(fitness))])
     summary.visualize()
-    #^^^ COMMENT OUT IF YOU NEED PROFILER
-
 
 if __name__ == '__main__':
     main()

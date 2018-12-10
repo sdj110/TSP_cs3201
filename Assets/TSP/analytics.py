@@ -41,7 +41,6 @@ def parse_argv():
     else:
         print("Invalid command:", sys.argv[1])
 
-#@profile
 def run(filename):
     startTime = datetime.now()
     print("START:")
