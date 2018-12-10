@@ -43,7 +43,7 @@ def main():
     useHeuristic = False
     useSwap = False
     staled = False
-    heuristicThreshold = len(population)
+    heuristicThreshold = len(population) * 0.25
     swapThreshold = len(population) * 5
     stalingThreshold = len(population) * 10
     currentThreshold = heuristicThreshold
