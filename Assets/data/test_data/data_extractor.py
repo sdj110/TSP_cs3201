@@ -41,7 +41,7 @@ if __name__ == '__main__':
         "avg_fitness" : ""
     }
     for d in dict_list:
-        data_dict["time"] += str(d["elapsed_time"]) + ","
+        data_dict["time"] += str(d["elapsed_time"].split(":")[2]) + ","
         data_dict["generation"] += str(d["generation"]) + ","
         data_dict["best_fitness"] += str(d["best_fitness"]) + ","
         data_dict["avg_fitness"] += str(d["avg_fitness"]) + ","
