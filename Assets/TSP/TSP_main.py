@@ -1,4 +1,4 @@
-
+import sys
 import random as r
 import file_manager
 from city_manager import initialize
@@ -16,11 +16,9 @@ from profiler import profile
 from datetime import datetime
 import summary
 
-pop_size = 1000  #must be a multiple of 4
+pop_size = 1000
 mating_pool_size = int(pop_size * 0.5)
 tournament_size = 4
-mw_tournament_size = 100    #used for the multiple winner tourneys
-mw_tournament_winners = 10  # ^
 mut_rate = 0.1
 xover_rate = 0.9
 gen_limit = 10000
@@ -28,9 +26,20 @@ staling_limit = 10
 summaryAvgList = []
 summaryBestList = []
 
+def parse_argv():
+    if len(sys.argv) <= 1:
+        return file_manager.SAHARA_PATH
+    cmd = sys.argv[1].lower()
+    if cmd == 'u' or cmd == "uruguay":
+        return file_manager.URUGUAY_PATH
+    elif cmd == 'c' or cmd == "canada":
+        return file_manager.CANADA_PATH
+    else:
+        return file_manager.SAHARA_PATH
+
 #@profile
 def main():
-    initialize(file_manager.SAHARA_PATH)
+    initialize(parse_argv())
     startTime = datetime.now()
     print("START:")
     current_gen = 0
