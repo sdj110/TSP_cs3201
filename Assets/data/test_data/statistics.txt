@@ -1,0 +1,43 @@
+SAHARA
+
+500 x 2:
+Best: Mean = 28065.08, SD = 435.48, SR = 23
+Generations: Mean = 166.61, SD = 18.54
+Time: Mean = 2.00, SD = 0.22
+
+500 x 0.75:
+Best: Mean = 27979.24, SD = 365.35, SR = 27
+Generations: Mean = 165.04, SD = 16.04
+Time: Mean = 2.07, SD = 0.22
+
+1000 x 2:
+Best: Mean = 27999.37, SD = 387.58, SR = 32
+Generations: Mean = 161.15, SD = 13.89
+Time: Mean = 4.13, SD = 0.40
+
+1000 x 0.75:
+Best: Mean = 27911.39, SD = 330.00, SR = 31
+Generations: Mean = 164.10, SD = 13.31
+Time: Mean = 3.99, SD = 0.35
+
+2000 x 2:
+Best: Mean = 27828.96, SD = 292.72, SR = 45
+Generations: Mean = 162.61, SD = 12.53
+Time: Mean = 8.01, SD = 0.70
+
+2000 x 0.75:
+Best: Mean = 27790.73, SD = 271.78, SR = 50
+Generations: Mean = 162.18, SD = 12.42
+Time: Mean = 7.89, SD = 0.59
+
+URUGUAY
+
+500 x 2:
+Best: Mean = 374189.10, SD = 25899.01
+Generations: Mean = 2676.00, SD = 257.78
+Time: Mean = 569.67, SD = 67.92
+
+500 x 0.75:
+Best: Mean = 388511.35, SD = 31182.62
+Generations: Mean = 2370.50, SD = 303.47
+Time: Mean = 794.14, SD = 169.30
