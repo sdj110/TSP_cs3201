@@ -42,7 +42,9 @@ if __name__ == '__main__':
             "avg_fitness" : ""
         }
         for d in dict_list:
-            data_dict["time"] += str(d["elapsed_time"].split(":")[2]) + ","
+            time_list = d["elapsed_time"].split(":")
+            total_time = float(time_list[0]) * 3600 + float(time_list[1]) * 60 + float(time_list[2])
+            data_dict["time"] += str(total_time) + ","
             data_dict["generation"] += str(d["generation"]) + ","
             data_dict["best_fitness"] += str(d["best_fitness"]) + ","
             data_dict["avg_fitness"] += str(d["avg_fitness"]) + ","
@@ -50,6 +52,5 @@ if __name__ == '__main__':
         write_file(filename + "_results.txt", data_dict)
 
         print("Data saved to file ", filename + "_results.txt")
-
 
     
