@@ -16,7 +16,7 @@ from profiler import profile
 from datetime import datetime
 import summary
 
-pop_size = 1000  #must be a multiple of 4
+pop_size = 500  #must be a multiple of 4
 mating_pool_size = int(pop_size * 0.25)
 tournament_size = 4
 mw_tournament_size = 100    #used for the multiple winner tourneys
