@@ -41,3 +41,13 @@ Time: Mean = 569.67, SD = 67.92
 Best: Mean = 388511.35, SD = 31182.62
 Generations: Mean = 2370.50, SD = 303.47
 Time: Mean = 794.14, SD = 169.30
+
+1000 x 2:
+Best: Mean = 212599.30, SD = 13970.54
+Generations: 5593.00, SD = 455.74
+Time: Mean = 3306.84, SD = 659.70
+
+1000 x 0.75:
+Best: Mean = 215174.50, SD = 15962.65
+Generations: 5278.10, SD = 523.94
+Time: Mean = 3105.63, SD = 838.66
